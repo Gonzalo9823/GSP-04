@@ -1,5 +1,6 @@
 import pygame
 from settings import BLACK, WHITE, WIDTH, HEIGHT
+import sys
 
 def start_screen(screen):
     start = False
@@ -51,7 +52,7 @@ def start_screen(screen):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
-                exit()
+                sys.exit()
 
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 if EASY_BUTTON.collidepoint(event.pos):
@@ -64,7 +65,7 @@ def start_screen(screen):
 
         if keys[pygame.K_ESCAPE]:
             pygame.quit()
-            exit()
+            sys.exit()
 
     return current_difficulty
 
