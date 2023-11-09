@@ -28,7 +28,7 @@ def game_screen(screen, difficulty):
     left_paddle = pygame.Rect(10, (HEIGHT - PADDLE_HEIGHT) // 2, PADDLE_WIDTH, PADDLE_HEIGHT)
     right_paddle = pygame.Rect(WIDTH - 10 - PADDLE_WIDTH, (HEIGHT - PADDLE_HEIGHT) // 2, PADDLE_WIDTH, PADDLE_HEIGHT)
 
-    balls = [pygame.Rect(WIDTH // 2 - BALL_WIDTH // 2, HEIGHT // 2 - BALL_HEIGHT // 2, BALL_WIDTH, BALL_HEIGHT) for _ in range(NUM_BALLS)]
+    balls = [pygame.Rect(WIDTH // 2 - BALL_WIDTH // 2, random.randint(HEIGHT // 2 - 200, HEIGHT // 2 + 200) - BALL_HEIGHT // 2, BALL_WIDTH, BALL_HEIGHT) for _ in range(NUM_BALLS)]
     ball_dxs = [random.choice([BALL_SPEED_X, -BALL_SPEED_X]) for _ in range(NUM_BALLS)]
     ball_dys = [random.choice([BALL_SPEED_Y, -BALL_SPEED_Y]) for _ in range(NUM_BALLS)]
 
@@ -80,7 +80,7 @@ def game_screen(screen, difficulty):
 
                 if ball.left <= 10:
                     right_score += 1
-                    ball.center = (WIDTH // 2, HEIGHT // 2)
+                    ball.center = (WIDTH // 2, random.randint(HEIGHT // 2 - 200, HEIGHT // 2 + 200))
                     ball_dxs[idx] = random.choice([BALL_SPEED_X, -BALL_SPEED_X])
                     ball_dys[idx] = random.choice([BALL_SPEED_Y, -BALL_SPEED_Y])
 
@@ -90,7 +90,7 @@ def game_screen(screen, difficulty):
 
                 elif ball.right >= WIDTH - 10:
                     left_score += 1
-                    ball.center = (WIDTH // 2, HEIGHT // 2)
+                    ball.center = (WIDTH // 2, random.randint(HEIGHT // 2 - 200, HEIGHT // 2 + 200))
                     ball_dxs[idx] = random.choice([BALL_SPEED_X, -BALL_SPEED_X])
                     ball_dys[idx] = random.choice([BALL_SPEED_Y, -BALL_SPEED_Y])
 
