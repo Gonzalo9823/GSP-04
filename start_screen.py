@@ -6,9 +6,9 @@ def start_screen(screen):
     start = False
     pygame.display.set_caption("Pong")
 
-    TITLE_FONT = pygame.font.Font("./fonts/arial.ttf", 60)
-    INFO_FONT = pygame.font.Font("./fonts/arial.ttf", 40)
-    BUTTON_FONT = pygame.font.Font("./fonts/arial.ttf", 30)
+    TITLE_FONT = pygame.font.SysFont("Arial", 60)
+    INFO_FONT = pygame.font.SysFont("Arial", 40)
+    BUTTON_FONT = pygame.font.SysFont("Arial", 30)
 
     EASY_BUTTON = pygame.Rect(WIDTH // 4, HEIGHT - 150, 150, 50)
     PLAY_BUTTON = pygame.Rect(WIDTH - WIDTH // 4 - 150, HEIGHT - 150, 150, 50)

@@ -3,7 +3,7 @@ import random
 from settings import *
 
 def game_screen(screen, difficulty):
-    points_font = pygame.font.Font("./fonts/arial.ttf", POINTS_FONT_SIZE)
+    points_font = pygame.font.SysFont("Arial", POINTS_FONT_SIZE)
     clock = pygame.time.Clock()
 
     pygame.display.set_caption("Pong")
@@ -120,12 +120,12 @@ def game_screen(screen, difficulty):
         else:
             screen.fill(BLACK)
 
-            winner_font = pygame.font.Font("./fonts/arial.ttf", 50)
+            winner_font = pygame.font.SysFont("Arial", 50)
             winner_surface = winner_font.render(winner, True, WHITE)
             winner_position = winner_surface.get_rect(center=(WIDTH // 2, HEIGHT // 2 - 100))
             screen.blit(winner_surface, winner_position)
 
-            replay_font = pygame.font.Font("./fonts/arial.ttf", 30)
+            replay_font = pygame.font.SysFont("Arial", 30)
             replay_surface = replay_font.render("Press ENTER to play again.", True, WHITE)
             replay_position = replay_surface.get_rect(center=(WIDTH // 2, winner_position.bottom + 80))
             screen.blit(replay_surface, replay_position)
